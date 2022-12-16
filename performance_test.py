@@ -33,4 +33,4 @@ for file in files:
     file_no += 1
     print('file number ' + str(file_no) + ' finished')
 
-print("WER:", wer(transcripts, labels))
+print("WER:", wer(labels, transcripts))
