@@ -6,6 +6,7 @@ import keyboard
 from pydub import AudioSegment
 import librosa
 import numpy as np
+from OpenGL.GL import *
 
 tokenizer = Wav2Vec2Processor.from_pretrained('facebook/wav2vec2-base-960h')
 model = Wav2Vec2ForCTC.from_pretrained('facebook/wav2vec2-base-960h')
@@ -33,7 +34,7 @@ if selection == str(1):
     """
     Transcribe text from audio file.
     """
-    input_audio = librosa.load("D:\\Recording.flac")
+    input_audio = librosa.load() # paste file path here
     tensor = torch.tensor(np.array(input_audio[0]))
     print(process_audio(tensor))
 
